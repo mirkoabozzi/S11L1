@@ -8,7 +8,7 @@ const MainSearch = () => {
   const [query, setQuery] = useState("");
   const [jobs, setJobs] = useState([]);
 
-  const favouritesLength = useSelector((state) => state.favourites.content.length);
+  // const favouritesLength = useSelector((state) => state.favourites.content.length);
 
   const baseEndpoint = "https://strive-benchmark.herokuapp.com/api/jobs?search=";
 
@@ -34,8 +34,8 @@ const MainSearch = () => {
 
   return (
     <Container className="mt-2">
-      <Link to="/favourites"> Preferiti</Link>
-      <Badge className="ms-2">{favouritesLength}</Badge>
+      {/* <Link to="/favourites"> Preferiti</Link>
+      <Badge className="ms-2">{favouritesLength}</Badge> */}
       <Row>
         <Col xs={10} className="mx-auto my-3">
           <h1 className="display-1">Remote Jobs Search</h1>

@@ -17,7 +17,7 @@ const Favourites = () => {
               <Link to={`/${company.company_name}`}>{company.company_name}</Link>
               <Button
                 variant="danger"
-                className="ms-2"
+                className="m-2"
                 onClick={() => {
                   dispatch({ type: "REMOVE_FAVOURITE", payload: company._id });
                 }}
