@@ -1,13 +1,14 @@
 import { ListGroup } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
 const Favourites = () => {
+  const favouritesCompany = useSelector((state) => state.favourites.content);
+
   return (
     <ListGroup>
-      <ListGroup.Item>Cras justo odio</ListGroup.Item>
-      <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-      <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-      <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
-      <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+      {favouritesCompany.map((company, index) => {
+        return <ListGroup.Item key={index}> {company.company_name} </ListGroup.Item>;
+      })}
     </ListGroup>
   );
 };

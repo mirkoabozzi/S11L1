@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import Job from "./Job";
+import { Link } from "react-router-dom";
 
 const MainSearch = () => {
   const [query, setQuery] = useState("");
@@ -8,11 +9,11 @@ const MainSearch = () => {
 
   const baseEndpoint = "https://strive-benchmark.herokuapp.com/api/jobs?search=";
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setQuery(e.target.value);
   };
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
@@ -30,6 +31,7 @@ const MainSearch = () => {
 
   return (
     <Container>
+      <Link to="/favourites"> Preferiti </Link>
       <Row>
         <Col xs={10} className="mx-auto my-3">
           <h1 className="display-1">Remote Jobs Search</h1>
@@ -40,7 +42,7 @@ const MainSearch = () => {
           </Form>
         </Col>
         <Col xs={10} className="mx-auto mb-5">
-          {jobs.map(jobData => (
+          {jobs.map((jobData) => (
             <Job key={jobData._id} data={jobData} />
           ))}
         </Col>

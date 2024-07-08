@@ -16,7 +16,7 @@ const mainReducer = (state = initalState, action) => {
       };
 
     default:
-      break;
+      return state;
   }
 };
 export default mainReducer;
