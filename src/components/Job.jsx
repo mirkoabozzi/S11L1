@@ -6,9 +6,11 @@ const Job = ({ data }) => {
   const dispatch = useDispatch();
 
   return (
-    <Row className="mx-0 mt-3 p-3" style={{ border: "1px solid #00000033", borderRadius: 4 }}>
+    <Row className="align-items-center mx-0 mt-3 p-3" style={{ border: "1px solid #00000033", borderRadius: 4 }}>
       <Col xs={3}>
         <Link to={`/${data.company_name}`}>{data.company_name}</Link>
+      </Col>
+      <Col xs="3">
         <Button
           variant="white"
           className="ms-2"
@@ -22,7 +24,7 @@ const Job = ({ data }) => {
           ❤️
         </Button>
       </Col>
-      <Col xs={9}>
+      <Col xs={6}>
         <a href={data.url} target="_blank" rel="noreferrer">
           {data.title}
         </a>
