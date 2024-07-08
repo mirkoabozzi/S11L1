@@ -1,5 +1,6 @@
 import { ListGroup } from "react-bootstrap";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Favourites = () => {
   const favouritesCompany = useSelector((state) => state.favourites.content);
@@ -7,7 +8,12 @@ const Favourites = () => {
   return (
     <ListGroup>
       {favouritesCompany.map((company, index) => {
-        return <ListGroup.Item key={index}> {company.company_name} </ListGroup.Item>;
+        return (
+          <Link to={`/${company.company_name}`} key={index}>
+            {" "}
+            {company.company_name}{" "}
+          </Link>
+        );
       })}
     </ListGroup>
   );
