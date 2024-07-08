@@ -1,14 +1,6 @@
 const initalState = {
-  preferiti: [],
+  favourites: [],
 };
 
-const mainReducer = (state = initalState, action) => {
-  switch (action.type) {
-    case value:
-      break;
-
-    default:
-      break;
-  }
-};
+const mainReducer = (state = initalState, action) => {};
 export default mainReducer;
